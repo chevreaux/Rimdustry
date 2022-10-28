@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <PipeSystem.PipeNetDef>
+    <defName>chv_MechPowerNet</defName>
+    <resource>
+      <name>Mechanical Power</name>
+      <unit>W</unit>
+      <color>(0.85, 0.65, 0.13)</color>
+      <offTexPath>UI/Overlays/MechPowerOff</offTexPath>
+    </resource>
+      <pipeDefs>
+    <li>placeholderPipe</li>
+  </pipeDefs>
+    <overlayOptions>
+      <overlayColor>(0.85, 0.65, 0.13)</overlayColor>
+    </overlayOptions>
+  </PipeSystem.PipeNetDef>
+
+  
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>placeholderPipe</defName>
+    <thingClass>PipeSystem.Building_Pipe</thingClass>
+    <graphicData>
+      <linkType>Basic</linkType>
+      <linkFlags>
+        <li>Custom7</li>
+      </linkFlags>
+    </graphicData>
+    <altitudeLayer>Conduits</altitudeLayer>
+    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <comps>
+      <li Class="PipeSystem.CompProperties_Resource">
+        <pipeNet>chv_MechPowerNet</pipeNet>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PipeSystem.PlaceWorker_Pipe</li>
+    </placeWorkers>
+    <rotatable>false</rotatable>
+  </ThingDef>
+</Defs>

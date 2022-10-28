@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<ThingDef ParentName="BuildingBase">
+	<defName>MechPowerTest</defName>
+	<label>mechanical power generator</label>
+	<description>Generates mechanical power.</description>
+	<graphicData>
+		<texPath>Things/Building/Special/VanometricPowerCell</texPath>
+		<graphicClass>Graphic_Multi</graphicClass>
+		<drawSize>(2, 3)</drawSize>
+		<damageData>
+			<cornerTL>Damage/Corner</cornerTL>
+			<cornerTR>Damage/Corner</cornerTR>
+			<cornerBL>Damage/Corner</cornerBL>
+			<cornerBR>Damage/Corner</cornerBR>
+		</damageData>
+	</graphicData>
+	<altitudeLayer>Building</altitudeLayer>
+	<drawerType>MapMeshAndRealTime</drawerType>
+	<pathCost>42</pathCost>
+	<fillPercent>0.4</fillPercent>
+	<passability>PassThroughOnly</passability>
+	<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+	<canOverlapZones>false</canOverlapZones>
+	<castEdgeShadows>true</castEdgeShadows>
+	<staticSunShadowHeight>0.5</staticSunShadowHeight>
+	<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+	<statBases>
+		<MarketValue>1200</MarketValue>
+		<MaxHitPoints>200</MaxHitPoints>
+		<Flammability>0</Flammability>
+		<Mass>15</Mass>
+	</statBases>
+	<tickerType>Normal</tickerType>
+	<size>(1, 2)</size>
+	<costList>
+		<Steel>100</Steel>
+	</costList>
+	<comps>
+		<li Class="PipeSystem.CompProperties_ResourceTrader">
+			<pipeNet>chv_MechPowerNet</pipeNet>
+			<consumptionPerTick>-2</consumptionPerTick>
+		</li>
+		<li Class="CompProperties_HeatPusher">
+        	<compClass>PipeSystem.CompHeatPusherNeedResource</compClass>
+        	<heatPerSecond>3</heatPerSecond>
+      </li>
+		<li Class="CompProperties_Refuelable">
+			<fuelConsumptionRate>22.0</fuelConsumptionRate>
+			<fuelCapacity>75.0</fuelCapacity>
+			<fuelFilter>
+			<thingDefs>
+				<li>WoodLog</li>
+			</thingDefs>
+			</fuelFilter>
+			<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+      </li>
+	</comps>
+	<designationCategory>Furniture</designationCategory>
+</ThingDef>
+
+<ThingDef ParentName="BuildingBase">
+	<defName>MechPowerLamp</defName>
+	<label>Mechanical Power Lamp</label>
+	<description>Consumes Mechanical Power</description>
+	<thingClass>Building</thingClass>
+	<category>Building</category>
+	<altitudeLayer>Building</altitudeLayer>
+	<passability>PassThroughOnly</passability>
+	<selectable>true</selectable>
+	<fillPercent>0.20</fillPercent>
+	<pathCost>14</pathCost>
+	<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+	<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+	<designationCategory>Furniture</designationCategory>
+	<rotatable>false</rotatable>
+	<uiIconOffset>(0, 0.03)</uiIconOffset>
+	<graphicData>
+		<graphicClass>Graphic_Single</graphicClass>
+		<texPath>Things/Building/Furniture/LampStanding</texPath>
+		<shadowData>
+			<volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.1)</offset>
+		</shadowData>
+		<damageData>
+			<rect>(0.2,0.2,0.6,0.6)</rect>
+		</damageData>
+	</graphicData>
+	<statBases>
+		<MaxHitPoints>50</MaxHitPoints>
+		<WorkToBuild>300</WorkToBuild>
+		<Flammability>1.0</Flammability>
+		<Mass>4</Mass>
+	</statBases>
+	<costList>
+		<Steel>20</Steel>
+	</costList>
+	<comps>
+		<li Class="PipeSystem.CompProperties_ResourceTrader">
+			<pipeNet>chv_MechPowerNet</pipeNet>
+			<consumptionPerTick>1</consumptionPerTick>
+		</li>
+		<li Class="CompProperties_Flickable">
+			<commandTexture>Things/UI/Overlays/MechPower</commandTexture>
+		</li>
+	</comps>
+</ThingDef>
+
+<ThingDef ParentName="BenchBase">
+    <defName>PowerLoom</defName>
+    <label>power loom</label>
+    <description>A workbench with a sewing machine for rapid tailoring of clothes.</description>
+    <thingClass>PipeSystem.Building_ResourceWorkTable</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Production/TableTailorElectric</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3.5,1.5)</drawSize>
+      <shaderType>CutoutComplex</shaderType>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.20</staticSunShadowHeight>
+    <costStuffCount>75</costStuffCount>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+    </stuffCategories>
+    <altitudeLayer>Building</altitudeLayer>
+    <fillPercent>0.5</fillPercent>
+    <useHitPoints>True</useHitPoints>
+    <statBases>
+      <WorkToBuild>2500</WorkToBuild>
+      <MaxHitPoints>180</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <size>(3,1)</size>
+    <designationCategory>Production</designationCategory>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <surfaceType>Item</surfaceType>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <inspectorTabs>
+      <li>ITab_Bills</li>
+    </inspectorTabs>
+    <building>
+      <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+    </building>
+    <comps>
+		<li Class="PipeSystem.CompProperties_ResourceTrader">
+			<pipeNet>chv_MechPowerNet</pipeNet>
+			<consumptionPerTick>1</consumptionPerTick>
+		</li>
+		<li Class="CompProperties_Flickable">
+			<commandTexture>Things/UI/Overlays/MechPower</commandTexture>
+		</li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>ComplexClothing</li>
+      <li>chv_Mechanization</li>
+    </researchPrerequisites>
+	  <modExtensions>
+      <li Class="RecipeInheritance.ThingDefExtension">
+        <inheritRecipesFrom>
+          <li>ElectricTailoringBench</li>
+        </inheritRecipesFrom>
+      </li>
+    </modExtensions>
+  </ThingDef>
+</Defs>
+

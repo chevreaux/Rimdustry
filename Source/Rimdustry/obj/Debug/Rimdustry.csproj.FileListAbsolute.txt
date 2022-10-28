@@ -1,0 +1,4 @@
+C:\Users\Zachary\Documents\Rimworld\Industry\Assemblies\Rimdustry.dll
+C:\Users\Zachary\Documents\Rimworld\Industry\Source\Rimdustry\obj\Debug\Rimdustry.csproj.AssemblyReference.cache
+C:\Users\Zachary\Documents\Rimworld\Industry\Source\Rimdustry\obj\Debug\Rimdustry.csproj.CoreCompileInputs.cache
+C:\Users\Zachary\Documents\Rimworld\Industry\Source\Rimdustry\obj\Debug\Rimdustry.dll

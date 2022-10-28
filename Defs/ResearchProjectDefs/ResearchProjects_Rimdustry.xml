@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>chv_Mechanization</defName>
+    <label>mechanization</label>
+    <description>Use wind and water power to drive machinery.</description>
+    <baseCost>800</baseCost>
+    <techLevel>Medieval</techLevel>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+    <prerequisites>
+      <li>Smithing</li>
+    </prerequisites>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>chv_SteamPower</defName>
+    <label>steam power</label>
+    <description>Convert heat to mechanical energy using steam engines.</description>
+    <baseCost>800</baseCost>
+    <techLevel>Industrial</techLevel>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+    <prerequisites>
+      <li>chv_Mechanization</li>
+    </prerequisites>
+  </ResearchProjectDef>
+
+<ResearchProjectDef>
+    <defName>chv_Electricity</defName>
+    <label>electricity</label>
+    <description>Generate electricity from mechanical energy using a dynamo.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+    <prerequisites>
+      <li>chv_SteamPower</li>
+    </prerequisites>
+    <discoveredLetterTitle>About: Electricity</discoveredLetterTitle>
+    <discoveredLetterText>Your colony has harnessed the power which outsiders call "electricity". While it's uses are limited for now, it has the potential to transform every aspect of your people's way of life.\n\nYou have now unlocked the Power tab in the Architect menu from which you may build a dynamo to generate electrcity. The Power tab also displays the electric grid which connects electric generators and appliances.</discoveredLetterText>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>chv_WindTurbine</defName>
+    <label>wind turbine</label>
+    <description>Harness wind power to generate electricity without the use of a dynamo.</description>
+    <baseCost>600</baseCost>
+    <techLevel>Industrial</techLevel>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+    <prerequisites>
+      <li>Electricity</li>
+    </prerequisites>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>chv_Lathe</defName>
+    <label>lathe</label>
+    <description>Build a lathe to craft the first firearms - the smoothbore musket and flintlock pistol.</description>
+    <baseCost>600</baseCost>
+    <techLevel>Industrial</techLevel>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+    <prerequisites>
+      <li>chv_Mechanization</li>
+    </prerequisites>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>chv_Rifling</defName>
+    <label>rifling</label>
+    <description>Craft the more accurate rifled musket by adding grooves inside the gun's barrel.</description>
+    <baseCost>400</baseCost>
+    <techLevel>Industrial</techLevel>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+    <prerequisites>
+      <li>chv_Lathe</li>
+    </prerequisites>
+  </ResearchProjectDef>
+  
+</Defs>

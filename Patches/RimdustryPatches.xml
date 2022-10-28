@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/ResearchProjectDef[defName="Electricity"]/label</xpath>
+  <value>
+    <label>Alternator</label>
+  </value>
+</Operation>
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/ResearchProjectDef[defName="Electricity"]/description</xpath>
+  <value>
+    <description>Transmit electricity over large distances thanks to the use of alternating current.</description>
+  </value>
+</Operation>
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/ResearchProjectDef[defName="Electricity"]/discoveredLetterText</xpath>
+  <value>
+    <discoveredLetterText>You can now build a wider variety of electrical devices, including power conduits for trasmitting energy across the colony.</discoveredLetterText>
+  </value>
+</Operation>
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/ResearchProjectDef[defName="Electricity"]/discoveredLetterTitle</xpath>
+  <value>
+    <discoveredLetterTitle>About: Electricity II</discoveredLetterTitle>
+  </value>
+</Operation>
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/ResearchProjectDef[defName="Electricity"]/baseCost</xpath>
+  <value>
+    <baseCost>600</baseCost>
+  </value>
+</Operation>
+<Operation Class="PatchOperationAdd">
+  <xpath>Defs/ResearchProjectDef[defName="Electricity"]</xpath>
+  <value>
+    <prerequisites>
+    <li>chv_Electricity</li>
+    </prerequisites>
+  </value>
+</Operation>
+
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/ResearchProjectDef[defName="Machining"]/prerequisites</xpath>
+  <value>
+    <prerequisites>
+    <li>chv_Electricity</li>
+    <li>chv_Lathe</li>
+    </prerequisites>
+  </value>
+</Operation>
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/ResearchProjectDef[defName="Machining"]/baseCost</xpath>
+  <value>
+    <baseCost>500</baseCost>
+  </value>
+</Operation>
+
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/ResearchProjectDef[defName="Gunsmithing"]/label</xpath>
+    <value>
+      <label>repeaters</label>
+    </value>
+</Operation>
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/ResearchProjectDef[defName="Gunsmithing"]/description</xpath>
+    <value>
+      <description>Craft guns which are capable of rapid firing and reloading like revolvers, pump shotguns, bolt-action rifles, and incendiary launchers.</description>
+    </value>
+</Operation>
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/ResearchProjectDef[defName="Gunsmithing"]/prerequisites</xpath>
+  <value>
+    <prerequisites>
+    <li>chv_Rifling</li>
+    </prerequisites>
+  </value>
+</Operation>
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/ResearchProjectDef[defName="Gunsmithing"]/baseCost</xpath>
+  <value>
+    <baseCost>400</baseCost>
+  </value>
+</Operation>
+
+<Operation Class="PatchOperationAdd">
+  <xpath>Defs/ResearchProjectDef[defName="BlowbackOperation"]/prerequisites</xpath>
+  <value>
+    <li>Machining</li>
+  </value>
+</Operation>
+  <Operation Class="PatchOperationAdd">
+  <xpath>Defs/ResearchProjectDef[defName="Mortars"]/prerequisites</xpath>
+  <value>
+    <li>Machining</li>
+  </value>
+</Operation>
+
+</Patch>
